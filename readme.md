@@ -34,5 +34,5 @@ This will run webpack, then start a simple web server to test the results.
 
 ### Conclusion
 
-Sourcemaps be generated as UTF-8 with BOM maybe?
+Is is possible sourcemaps should be exported by Webpack as UTF-8 with BOM?
 
