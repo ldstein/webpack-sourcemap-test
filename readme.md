@@ -2,7 +2,13 @@
 
 This is a demo of an out of alignment sourcemap. The probable cause of the issue is the sourcemap's response header content type is set to `Content-Type: application/json` instead of `Content-Type: application/json; charset=UTF-8`.
 
-## How to test
+My testing environment:
+
+- Chrome v58.0.3029.81
+- MS Windows 10 Pro 14393.1066
+- Chrome debugger cache disabled (debugger network tab  > Disable cache checked)
+
+## Installation
 
 1. `npm install` to install the dependencies (webpack and webpack-dev-server)
 
