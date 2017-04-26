@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build-good" : "webpack && add-bom -f index.build.js.map && webpack-dev-server --config dev-server.webpack.config.js",
+    "build-good" : "webpack-dev-server",
     "build-bad" : "webpack && webpack-dev-server --config dev-server.webpack.config.js"
   }
 }
