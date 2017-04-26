@@ -1,13 +1,30 @@
+// The only difference between the two configs is the 'externals' property.
+
 module.exports =
-{
-    entry: '.',
-    devtool: 'cheap-module-source-map',
-    externals:
+[
     {
-        aaa: 'aaa'
+        entry: './index.js',
+        devtool: 'cheap-module-source-map',
+        externals:
+        {
+            './aaa': 'urlUtil'
+        },
+        output:
+        {
+            filename : 'bad.build.js'
+        },
+        devServer:
+        {
+            hot:false,
+            inline:false
+        }
     },
-    output:
     {
-        filename : 'index.build.js'
+        entry: './index.js',
+        devtool: 'cheap-module-source-map',
+        output:
+        {
+            filename : 'good.build.js'
+        }
     }
-};
+];

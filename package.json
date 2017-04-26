@@ -10,7 +10,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build-good" : "webpack-dev-server",
-    "build-bad" : "webpack && webpack-dev-server --config dev-server.webpack.config.js"
+    "serve" : "webpack-dev-server"
   }
 }

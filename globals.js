@@ -1,1 +1,1 @@
-window.aaa = 'aaa';
+module.exports = window.urlUtil = 'resolved to window.urlUtil';
