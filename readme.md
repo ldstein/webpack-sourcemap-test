@@ -1,6 +1,6 @@
 # Source Map correction due to incorrectly set response headers
 
-This is a demo of an out of alignment sourcemap. The probable cause of the issue is the sourcemap's response header content type is set to `Content-Type: application/json` instead of `Content-Type: application/json; charset=UTF-8`.
+This is a demo of an out of alignment sourcemap which is fixed by adding a UTF-8 BOM to the generated sourcemap file.
 
 My testing environment:
 
@@ -14,7 +14,9 @@ My testing environment:
 
 ### Test working sourcemap
 
-1. `npm run serve`
+This will run webpack, add a BOM to the generated sourcemap then start a simple web server to test the results.
+
+1. `npm run build-good`
 2. Open http://localhost:8080 in Chrome
 3. Debugger window will open automatically and stop on line 5.
 
@@ -22,29 +24,15 @@ My testing environment:
 
 ### Test misaligned sourcemap
 
-1. `npm run build-then-serve`
+This will run webpack, then start a simple web server to test the results.
+
+1. `npm run build-bad`
 2. Open http://localhost:8080 in Chrome
 3. Debugger window will open automatically and stop on line 6.
 
 ![Screenshot of Debugger](https://raw.githubusercontent.com/ldstein/webpack-sourcemap-test/master/doc/bad.png)
 
-### Hypothesis
+### Conclusion
 
-When webpack-dev-server responds to the request for `index.build.js.map`, the headers are different depending on where the sourcemap data resides:
-
-
-Content-Type received when `index.build.js.map` is served from memory:
-
-```
-Content-Type: application/json; charset=UTF-8
-```
-
-Content-Type received when `index.build.js.map` is served from file-system
-
-```
-Content-Type: application/json
-```
-
-It's my suspicion the misalignment is caused by Chrome receiving a UTF-8 encoded sourcemap and parsing it as non-UTF8 text.
-
+Sourcemaps be generated as UTF-8 with BOM maybe?
 

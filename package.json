@@ -4,12 +4,13 @@
   "description": "",
   "main": "index",
   "dependencies": {
+    "add-bom": "^1.0.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.4"
   },
   "devDependencies": {},
   "scripts": {
-    "serve": "webpack-dev-server",
-	"build-then-serve": "webpack && webpack-dev-server --config webpack.fake.config.js"
+    "build-good" : "webpack && add-bom -f index.build.js.map && webpack-dev-server --config dev-server.webpack.config.js",
+    "build-bad" : "webpack && webpack-dev-server --config dev-server.webpack.config.js"
   }
 }

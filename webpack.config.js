@@ -1,6 +1,6 @@
 module.exports =
 {
-    entry: '.',
+    entry: './index',
     devtool: 'cheap-module-source-map',
     externals:
     {
