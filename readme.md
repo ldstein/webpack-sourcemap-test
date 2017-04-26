@@ -1,4 +1,4 @@
-# Source Map correction due to incorrectly set response headers
+# Source Map fix by adding BOM to generated sourcemap file
 
 This is a demo of an out of alignment sourcemap which is fixed by adding a UTF-8 BOM to the generated sourcemap file.
 
@@ -14,7 +14,7 @@ My testing environment:
 
 ### Test working sourcemap
 
-This will run webpack, add a BOM to the generated sourcemap then start a simple web server to test the results.
+This will run webpack, **add BOM to the generated sourcemap** then start a simple web server to test the results.
 
 1. `npm run build-good`
 2. Open http://localhost:8080 in Chrome
